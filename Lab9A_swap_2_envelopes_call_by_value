@@ -1,0 +1,45 @@
+// 9a. Program to demonstrate the use of Call by Value to swap two numbers
+
+#include <stdio.h>
+
+// Function declaration
+void swap(int x, int y);
+
+int main() // Use proper return type: int main()
+{
+    int a, b;
+    printf("Enter any two values: \n");
+    scanf("%d %d", &a, &b);
+
+    printf("The values before function call: a = %d, b = %d\n", a, b);
+
+    swap(a, b); // Call by Value
+
+    printf("The values after function call: a = %d, b = %d\n", a, b); // Values will not change
+    return 0;
+}
+
+// Function definition using Call by Value
+void swap(int x, int y)
+{
+    int t;
+    t = x;
+    x = y;
+    y = t;
+    printf("The values after swapping inside the function: a = %d, b = %d\n", x, y);
+}
+
+
+/*
+Sample Input/Output:
+
+Enter any two values:
+10 20
+The values before function call: a = 10, b = 20
+The values after swapping inside the function: a = 20, b = 10
+The values after function call: a = 10, b = 20
+
+Explanation:
+The swap happens inside the function only for local variables (x and y),
+not the actual variables a and b.
+*/
